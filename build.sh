@@ -12,7 +12,7 @@ g++ -c src/main.cpp -o objdir/main.o
 
 echo "Generating explicit instantiations ..."
 cp src/lib.cpp objdir/lib.cpp
-nm -C objdir/main.o \
+nm -C --undefined-only objdir/main.o \
     | grep Bla \
     | cut -d 'U' -f 2 \
     | cut -c 2- \
